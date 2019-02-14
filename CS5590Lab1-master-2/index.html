@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Menu bar</title>
-	<link rel="stylesheet" type="text/css" href="css/Ngrade_login.css"/>
+	<link rel="stylesheet" type="text/css" href="css/login.css"/>
 	<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>-->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -19,7 +19,7 @@
 		<div id="nav">
 			<div class="navbar clearfix">
 
-				<a class="navbt" href="#"><span>Sign In</span></a>
+				<a class="navbt" id="user" href="#"><span>Sign In</span></a>
 				<a class="current" href="index.html">Home</a>
 				<a href="#">Search for courses</a>
 
@@ -207,6 +207,9 @@
 </div>
 
 <script type="text/javascript">
+	user = localStorage["user"];
+	document.getElementById("user").innerText="Hi " +user +"!";
+
 	(function(){
 
 		var $subblock = $(".subpage"), $head=$subblock.find('h2'), $ul = $("#proinfo"), $lis = $ul.find("li"), inter=false;
@@ -248,6 +251,7 @@
 		var page = pageName;
 		document.getElementById("pageframesrc").src=page;
 	}
+
 </script>
 
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
