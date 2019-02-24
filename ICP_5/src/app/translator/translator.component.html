@@ -1,0 +1,37 @@
+<div class="parent-container">
+  <div class="child-container">
+    <h2><b>Translator!!
+      </b></h2><br>
+    <form>
+      <div class="form-group">
+        <div class="form-group col-lg-6 input-group">
+          <input type="text" class="form-control" placeholder="text" #words>
+          <span class="input-group-addon">-</span>
+          
+        </div><br>
+        <button type="button" class="btn btn primary col-lg-2 col-lg-offset-5 " (click)="getTranslation()">Go</button>
+
+      </div>
+    </form>
+  </div>
+</div><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="panel panel-default col-6">
+        <div class="panel-heading"><b>Translation</b></div>
+        <div class="panel-body">
+          
+            <div>
+              <h4 class="list-group-item-heading">{{ wordsTranslate }}</h4>
+
+            </div>
+
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
