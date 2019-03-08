@@ -1,0 +1,20 @@
+<div class="game-container">
+  <div class="game-header">
+    <h3 class="title">Angular Snake</h3>
+    <div class="score-block">
+      <h3 class="score" >Score: {{score}}</h3>
+      <h3 class="best-score" >Top Score: {{topScore}}</h3>
+    </div>
+  </div>
+  <div class="game-board">
+    <div class="row" *ngFor="let column of board; let i = index;">
+      <div class="column" [ngStyle]="{'background-color': setColors(i, j)}" *ngFor="let row of column; let j = index" [ngClass]="{'apple': isApple(j, i)}"></div>
+    </div>
+  </div>
+  <div class="start-button" [ngClass]="{'disable-clicks': gameStarted}" (click)="showMenu()">
+    <div [ngClass]="{'pulsate': !gameStarted}">Let The Snake Loose!</div> </div>
+  <div class="new-game-menu" *ngIf="showMenuChecker">
+    <span class="new-game-menu-label">Select Mode</span>
+    <div class="start-button new-game-button" (click)="newGame(mode)" *ngFor="let mode of getKeys(ALL_MODES)">{{ALL_MODES[mode]}}</div>
+  </div>
+</div>
