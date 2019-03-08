@@ -1,0 +1,57 @@
+
+
+<div class="parent-container">
+  <div class="child-container">
+    <h2>
+      <b>Google Knowledge Graph Search API
+      </b>
+    </h2>
+    <br>
+    <form>
+      <div class="form-group">
+        <div class="form-group col-lg-6 col-lg-offset-3 input-group">
+          <input type="text" class="form-control" placeholder="key word" #keyword>
+          <span class="input-group-addon">-</span>
+
+        </div>
+        <br>
+        <button type="button" class="btn btn primary col-lg-2 col-lg-offset-5 " (click)="getInfo()">Go</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+<br>
+<br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="panel panel-default col-6">
+        <div class="panel-heading">
+          <b>information</b>
+        </div>
+        <div class="panel-body">
+          <div *ngFor="let item of itemList" class="list-group-item clearfix">
+            <div class="pull-left">
+              <img src="{{item.icon}}"><br>
+              <a class="list-group-item-heading">
+                <b>Description:</b> {{ item.name }} </a>
+              <br>
+              <a class="list-group-item-text">
+                <b>Details:</b> {{ item.des }}
+              </a>
+              <br>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
